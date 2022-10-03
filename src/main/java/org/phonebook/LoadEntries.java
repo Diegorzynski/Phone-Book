@@ -12,7 +12,8 @@ import java.util.Set;
 
 public class LoadEntries {
 
-    private static Logger log = LogManager.getLogger(LoadEntries.class);
+    private static Logger log = LogManager.getLogger(PhoneBook.class);
+
     private static final String FILE_PATH = "src/main/resources/phonebook.cvs";
 
 
@@ -22,7 +23,7 @@ public class LoadEntries {
         ) {
                 csvReader.readAll().forEach(entry ->
                         PhoneBook.addContact(entry[0],entry[1],entry[2]));
-                log.trace("Phone Book loaded");
+                log.trace("Phone Book Loaded");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

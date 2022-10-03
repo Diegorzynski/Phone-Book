@@ -16,7 +16,6 @@
         <opencsv.version>4.1</opencsv.version>
         <junit.version>4.12</junit.version>
         <jacoco.version>0.8.8</jacoco.version>
-        <site.version>2.0.0-M3</site.version>
     </properties>
 
     <dependencies>
@@ -51,12 +50,6 @@
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>${jacoco.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.maven.doxia/doxia-site-renderer -->
-        <dependency>
-            <groupId>org.apache.maven.doxia</groupId>
-            <artifactId>doxia-site-renderer</artifactId>
-            <version>${site.version}</version>
         </dependency>
     </dependencies>
 

@@ -75,7 +75,7 @@ public class PhoneBookTest {
         PhoneEntry expected = PhoneBook.search("Styles");
 
         assertEquals("01236956852", expected.getPhoneNumber());
-        assertEquals("Styles", expected.getLastName());
+        assertEquals("Harry", expected.getName());
 
     }
 
@@ -111,13 +111,13 @@ public class PhoneBookTest {
         PhoneBook.save();
         int linesBefore = countLines();
         //when
-        System.out.println("Lines before deleting " + linesBefore);
+        log.trace("Lines before deleting {} ", linesBefore);
         assertEquals(6, linesBefore);
         PhoneBook.deleteContact("New");
         // then
         PhoneBook.save();
         int linesAfter = countLines();
-        System.out.println("Lines after deleting " + linesAfter);
+        log.trace("Lines after deleting {}", linesAfter);
         assertEquals(5, linesAfter);
 
     }
