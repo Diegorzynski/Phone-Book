@@ -9,9 +9,7 @@ import org.junit.Test;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
-import java.lang.reflect.Field;
-import java.util.HashSet;
-import java.util.Set;
+
 
 import static org.junit.Assert.*;
 
@@ -28,13 +26,6 @@ public class PhoneBookTest {
     public void clear(){
         PhoneBook.deleteAll();
     }
-
-//    @After
-//    public void removeNewContact(){
-//        PhoneBook.deleteContact("New");
-//        PhoneBook.save();
-//    }
-
 
 
 
