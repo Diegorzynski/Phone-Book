@@ -13,15 +13,16 @@ public class PhoneBook {
     private static final Set<PhoneEntry>phoneEntries = new HashSet<>();
 
 
-    public static void addContact(String name, String lastName, String number){
+    public static boolean addContact(String name, String lastName, String number){
         if(Stream.of(name, lastName, number).anyMatch(Objects::isNull)){
             log.warn("Name or number cannot be null");
-            return;
-        }if(Stream.of(name, lastName, number).anyMatch(String::isEmpty)){
+            return false;
+        }if(Stream.of(name.trim(), lastName.trim(), number.trim()).anyMatch(String::isEmpty)){
             log.warn("Name or number cannot be empty");
-            return;
+            return false;
         }
         phoneEntries.add(new PhoneEntry(name, lastName, number));
+        return true;
     }
 
     public static void deleteContact(String entryInfo){

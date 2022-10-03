@@ -27,8 +27,6 @@ public class PhoneBookTest {
         PhoneBook.deleteAll();
     }
 
-
-
     @Test
     public void isInstanceOfPhoneEntry(){
         //Given
@@ -66,6 +64,22 @@ public class PhoneBookTest {
     }
 
     @Test
+    public void searchNull(){
+        PhoneEntry expected = PhoneBook.search("NonExistingPerson");
+
+        assertNull(expected);
+    }
+
+    @Test
+    public void searchByLastName(){
+        PhoneEntry expected = PhoneBook.search("Styles");
+
+        assertEquals("01236956852", expected.getPhoneNumber());
+        assertEquals("Styles", expected.getLastName());
+
+    }
+
+    @Test
     public void addingNewContactToFile() throws IOException {
         //Given
         int linesBefore = countLines();
@@ -77,8 +91,16 @@ public class PhoneBookTest {
 
         assertEquals(5, linesBefore);
         assertEquals(6, linesAfter);
+    }
 
+    @Test
+    public void addingNullContact(){
+        assertFalse( PhoneBook.addContact(null, null, null));
+    }
 
+    @Test
+    public void addingEmptyContact(){
+        assertFalse( PhoneBook.addContact(" ", " ", " "));
     }
 
 
