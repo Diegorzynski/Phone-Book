@@ -16,6 +16,8 @@
         <opencsv.version>4.1</opencsv.version>
         <junit.version>4.12</junit.version>
         <jacoco.version>0.8.8</jacoco.version>
+        <mail.version>1.6.2</mail.version>
+        <javax.version>1.1.1</javax.version>
     </properties>
 
     <dependencies>
@@ -51,6 +53,21 @@
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>${jacoco.version}</version>
         </dependency>
+
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>jakarta.mail</artifactId>
+                <version>${mail.version}</version>
+            </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>${javax.version}</version>
+        </dependency>
+
+
+
     </dependencies>
 
     <build>

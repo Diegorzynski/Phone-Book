@@ -3,6 +3,7 @@ package org.phonebook;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -52,8 +53,18 @@ public class PhoneBook {
                 return entry;
             }
         }
-        log.trace("Not Found");
+        log.warn("Not Found");
         return null;
+    }
+
+    public static String getAllContacts(){
+        StringBuffer stringBuffer = new StringBuffer();
+        for(PhoneEntry entries : phoneEntries){
+            stringBuffer.append(entries.getName() + " " + entries.getLastName() +
+                    " " + entries.getPhoneNumber() + "\n");
+        }
+        return stringBuffer.toString();
+
     }
 
     public static void save() {

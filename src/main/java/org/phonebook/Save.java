@@ -10,7 +10,7 @@ import java.util.Set;
 public class Save {
 
     private static Logger log = LogManager.getLogger(Save.class);
-    private static final String FILE_PATH = "src/main/resources/phonebook.cvs";
+    private static final String FILE_PATH = AppProperties.propperties.getProperty("file.path");
     private static final String HEADER = "Name, Last Name, Phone Number";
     private static final String NEW_LINE = "\n";
     private static final String COMMA =  ",";
